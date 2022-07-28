@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default App = () => {
-  return(
+const App = () => {
+  return (
     <div>
-      <h1>Welcome { new Date().toString }</h1>
+      <h1>Welcome</h1>
     </div>
   )
 }
+
+export default App
