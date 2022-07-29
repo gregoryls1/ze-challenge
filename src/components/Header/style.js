@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const WrapHeader = styled.div `
+export const WarpperHeader = styled.div `
       width: 100%;
     background-color: #333;
     height: 5em;

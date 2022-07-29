@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WrapFooter = styled.div`
+export const WarpperFooter = styled.div`
     display: flex;
     justify-content: center;
     background-color: #333;
@@ -10,7 +10,7 @@ export const WrapFooter = styled.div`
     padding: 40px;
 `
 
-export const WrapItens = styled.div`
+export const WarpperItens = styled.div`
   width: 100%;
   max-width: 1200px;
   display: grid;

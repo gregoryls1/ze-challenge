@@ -1,13 +1,13 @@
 import React from 'react';
 import LogoZe from '../../assets/images/ze-logo.png';
 
-import { WrapHeader, ImageHeader } from './style';
+import { WarpperHeader, ImageHeader } from './style';
 
 const Header = props => {
   return (
-    <WrapHeader >
+    <WarpperHeader >
       <ImageHeader src={LogoZe} />
-    </WrapHeader>
+    </WarpperHeader>
   )
 }
 
