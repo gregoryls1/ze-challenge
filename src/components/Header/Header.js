@@ -6,7 +6,9 @@ import { WarpperHeader, ImageHeader } from './style';
 const Header = props => {
   return (
     <WarpperHeader >
-      <ImageHeader src={LogoZe} />
+      <div>
+        <ImageHeader src={LogoZe} />
+      </div>
     </WarpperHeader>
   )
 }

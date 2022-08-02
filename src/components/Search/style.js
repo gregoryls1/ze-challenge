@@ -25,16 +25,16 @@ export const Input = styled.input`
   background-color: #ffff;
   padding-left: 48px;
 
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  ::placeholder { 
   color: #999;
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder { 
   color: #999;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder { 
   color: #999;
 }
 `

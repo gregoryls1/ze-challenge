@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-export const WarpperFooter = styled.div`
+export const WarpperFooter = styled.footer`
     display: flex;
     justify-content: center;
     background-color: #333;
     width: 100%;
-    position: fixed;
-    bottom: 0;
     padding: 40px;
 `
 
