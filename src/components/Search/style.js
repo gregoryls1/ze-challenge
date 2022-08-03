@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const WrapperSearch = styled.div`
   width: 100%;
+  height: 100%;
   max-width: ${(props) => props.sizeWidth}px;
   max-height: ${(props) => props.sizeHeight}px;
   position: relative;

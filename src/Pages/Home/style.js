@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const WarpperHome = styled.div`
    min-height: calc(100vh - 355px);
-  div {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffcc00;
-  }
+`
+
+export const Container = styled.div`
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffcc00;
 `
 
 export const TitleHome = styled.h1`
