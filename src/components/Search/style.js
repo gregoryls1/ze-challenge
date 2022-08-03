@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const WrapperSearch = styled.div`
   width: 100%;
   max-width: ${(props) => props.sizeWidth}px;
+  max-height: ${(props) => props.sizeHeight}px;
   position: relative;
 
   img {
@@ -11,6 +12,7 @@ export const WrapperSearch = styled.div`
     margin: 0;
     position: absolute;
     top: 50%;
+    left: 0;
     -ms-transform: translate(16px, -50%);
     transform: translate(16px, -50%);
   }
@@ -18,7 +20,7 @@ export const WrapperSearch = styled.div`
 
 export const Input = styled.input`
   width: 100%;
-  height: ${(props) => props.sizeHeight}px;
+  height: 100%;
   border-radius: 8px;
   border: 1px solid #ccc;
   border-color: #999;

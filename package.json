@@ -21,7 +21,9 @@
   "homepage": "https://github.com/gregoryls1/ze-challenge#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-places-autocomplete": "^7.3.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
