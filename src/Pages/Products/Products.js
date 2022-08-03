@@ -10,10 +10,18 @@ const Products = () => {
   const [listProducts, setListProducts] = useState()
   const [categories, setCategories] = useState()
   const [filterId, setFilterId] = useState()
-  const coordinates = JSON.parse(sessionStorage.getItem('coordinates'))
+  const [isActive, setIsActive] = useState(false);
+  const coordinates = {
+    lat: '-23.632919',
+    lng: '-46.699453'
+  }
 
   const callProductList = () => {
     searchDelivery(coordinates.lat.toString(), coordinates.lng.toString()).then(deliveries => {
+      if (deliveries.data.pocSearch <= 0) {
+        sessionStorage.clear()
+        return navigate('/', { replace: true })
+      }
       const id = deliveries.data.pocSearch ? deliveries.data.pocSearch[0].id : ''
       getAllCategory(id).then(category => {
         setCategories(category.data.allCategory)
