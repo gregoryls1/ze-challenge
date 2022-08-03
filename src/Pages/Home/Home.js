@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Search from '../../components/Search/Search';
 import IconLocation from '../../assets/images/icon_location.svg'
@@ -11,10 +11,6 @@ import { WarpperHome, Container, TitleHome } from './style'
 const Home = () => {
   const [address, setAddress] = useState('')
   const navigate = useNavigate()
-  const [coordinates, setCoordinates] = useState({
-    lat: null,
-    lng: null
-  })
 
   const handleChange = address => {
     setAddress(address);
@@ -22,17 +18,22 @@ const Home = () => {
 
   const handleSelect = address => {
     geocodeByAddress(address)
-      .then(results => {
-        console.log(results[0])
-        // sessionStorage.setItem('address', results[0].formatted_address)
-        getLatLng(results[0])
-      })
-      .then(latLng => {
-        // sessionStorage.setItem('coordenates', JSON.stringify(latLng))
-        navigate("/produtos", { replace: true });
-      })
-      .catch(error => console.error('Error', error));
+    .then(results => {
+      sessionStorage.setItem('address', results[0].formatted_address)
+      return getLatLng(results[0])
+    })
+    .then(latLng =>  {
+      sessionStorage.setItem('coordinates', JSON.stringify(latLng))
+      return navigate("/produtos", { replace: true })
+    })
+    .catch(error => console.error('Error', error));
   }
+
+  useEffect(() =>{
+    if(sessionStorage.getItem('address')) {
+      navigate("/produtos", { replace: true })
+    }
+  }, [])
 
   return (
     <WarpperHome>

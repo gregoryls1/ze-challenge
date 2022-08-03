@@ -10,6 +10,10 @@ export const WrapperCard = styled.div`
   border: 1px solid rgb(243, 243, 243);
   box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px 0px;
   margin: 4px 8px 24px 16px;
+
+  @media(max-width: 767px){
+    margin: 4px 8px 24px 12px;
+  }
 `
 
 export const Product = styled.div`
