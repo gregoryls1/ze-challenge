@@ -11,7 +11,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('Products', () => {
-    test('Should be defined', () => {
+    test('should mount Products Component', () => {
         const component = renderer.create(<Products />);
         expect(component).toBeDefined();
     });
