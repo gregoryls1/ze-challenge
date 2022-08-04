@@ -24,7 +24,7 @@ const CardProduct = (props) => {
     <>
       <WrapperCard>
         <Product>
-          <img src={props.image} />
+          <img src={props.image} alt={`Produto: ${props.nameProduct}`} />
         </Product>
         <ProductDetails>
           <WrapperProductDetails>
