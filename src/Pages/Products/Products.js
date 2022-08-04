@@ -1,20 +1,30 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getProductList, searchDelivery, getAllCategory } from '../../services/api';
-import BadgeCategory from '../../components/BadgeCategory/BadgeCategory';
-import CardProduct from '../../components/CardProduct/CardProduct';
+import Header from '../../Components/Header/Header';
+import BadgeCategory from '../../Components/BadgeCategory/BadgeCategory';
+import CardProduct from '../../Components/CardProduct/CardProduct';
 import currencyFormatter from '../../utils/currencyFormatter';
-import { WrapperProducts, WrapperFilters } from './style';
+import {
+  WrapperProducts,
+  WrapperFilters,
+  HasNoProduct
+} from './style';
 
 
 const Products = () => {
   const [listProducts, setListProducts] = useState()
   const [categories, setCategories] = useState()
   const [filterId, setFilterId] = useState()
-  const [isActive, setIsActive] = useState(false);
-  const coordinates = {
-    lat: '-23.632919',
-    lng: '-46.699453'
-  }
+  const [shoppingCart, setShoppingCart] = useState(0)
+  const address = sessionStorage.getItem('address')
+  const navigate = useNavigate()
+  const coordinates = JSON.parse(sessionStorage.getItem('coordinates'))
+  
+  // {
+  //   lat: '-23.632919',
+  //   lng: '-46.699453'
+  // }
 
   const callProductList = () => {
     searchDelivery(coordinates.lat.toString(), coordinates.lng.toString()).then(deliveries => {
@@ -32,13 +42,11 @@ const Products = () => {
     })
   };
 
-
   const filterByCategory = filterId => {
     if (filterId) {
       setFilterId(filterId)
       callProductList(coordinates, filterId)
     }
-    activeFilter()
   }
 
   useEffect(() => {
@@ -47,6 +55,7 @@ const Products = () => {
 
   return (
     <>
+      <Header address={address} shoppingCart={shoppingCart} />
       <WrapperFilters>
         {categories &&
           categories.map(category =>
@@ -56,15 +65,20 @@ const Products = () => {
 
       </WrapperFilters>
       <WrapperProducts>
-        {listProducts && listProducts.map(product => {
-          return (
-            < CardProduct
-              image={product.images[0].url}
-              nameProduct={product.title}
-              price={currencyFormatter.format('br', product.productVariants[0].price)}
-            />
-          )
-        })}
+        {listProducts && listProducts.length <= 0 ?
+          <HasNoProduct>Nosso distribuidor não tem esse produto no momento! :(</HasNoProduct> :
+          listProducts?.map(product => {
+            return (
+              < CardProduct
+                image={product.images[0].url}
+                nameProduct={product.title}
+                price={currencyFormatter.format('br', product.productVariants[0].price)}
+                removeCart={() => setShoppingCart(shoppingCart - 1)}
+                addCart={() => setShoppingCart(shoppingCart + 1)}
+              />
+            )
+          })
+        }
       </WrapperProducts>
     </>
   )

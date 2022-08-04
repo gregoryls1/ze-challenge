@@ -1,19 +1,14 @@
 import React from 'react';
-import Header from './components/Header/Header';
+import { GlobalStyles } from './App.style';
 import Footer from './components/Footer/Footer'
-import Home from './Pages/Home/Home'
-import Products from './Pages/Products/Products'
-import { Route, Routes } from 'react-router-dom';
+import Routes from './Routes';
 
 const App = () => {
   return (
     <>
-      <Header/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/produtos'  element={<Products/>}/>
-        </Routes>
-      <Footer/>
+      <GlobalStyles/>
+      <Routes />
+      <Footer />
     </>
   )
 }

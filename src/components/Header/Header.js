@@ -1,12 +1,18 @@
 import React from 'react';
 import LogoZe from '../../assets/images/ze-logo.png';
+import IconBag from '../../assets/images/iconBag.svg'
+import {
+  WarpperHeader,
+  ItensHeader,
+  ImageHeader,
+  Address,
+  WrapperShoppingCart,
+  ImageBag
+} from './style';
 
-import { WarpperHeader, ItensHeader, ImageHeader, Address } from './style';
+const Header = (props) => {
 
-const Header = props => {
-
-  const getAddress = () => {
-    const address = sessionStorage.getItem('address');
+  const getAddress = (address) => {
     return address ? address.replace("", '') : '';
   }
 
@@ -14,13 +20,19 @@ const Header = props => {
     <WarpperHeader >
       <ItensHeader>
         <ImageHeader src={LogoZe} />
-        {getAddress() ?
+        {getAddress(props.address) ?
           <Address>
-          <span>Receber em:</span>
-          <p>{getAddress()}</p>
-        </Address> : ''
+            <span>Receber em:</span>
+            <p>{getAddress(props.address)}</p>
+          </Address> : ''
         }
       </ItensHeader>
+      {props.shoppingCart != null ?
+        <WrapperShoppingCart>
+          <ImageBag src={IconBag} />
+          <span>{props.shoppingCart}</span>
+        </WrapperShoppingCart> : ''
+      }
     </WarpperHeader>
   )
 }

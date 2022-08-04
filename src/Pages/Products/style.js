@@ -24,3 +24,14 @@ export const WrapperFilters = styled.div`
   padding: 24px 32px;
   margin: auto;
 `
+
+export const HasNoProduct = styled.div`
+  width: 100%;
+  max-height: 52px;
+  display: flex;
+  justify-content: center;
+  padding-top: 52px;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--gray-primary);
+`

@@ -29,15 +29,15 @@ export const Input = styled.input`
   padding-left: 48px;
 
   ::placeholder { 
-  color: #999;
+  color: var(--gray-primary);
   opacity: 1;
 }
 
 :-ms-input-placeholder { 
-  color: #999;
+  color: var(--gray-primary);
 }
 
 ::-ms-input-placeholder { 
-  color: #999;
+  color: var(--gray-primary);
 }
 `

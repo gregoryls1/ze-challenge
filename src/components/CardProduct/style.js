@@ -7,7 +7,7 @@ export const WrapperCard = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  border: 1px solid rgb(243, 243, 243);
+  border: 1px solid var(--white-primary);
   box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px 0px;
   margin: 4px 8px 24px 16px;
 
@@ -31,7 +31,7 @@ export const Product = styled.div`
 export const ProductDetails = styled.div`
   width: 100%;
   height: 95px;
-  border-top: 1px solid rgb(243, 243, 243);
+  border-top: 1px solid var(--white-primary);
   padding: 8px;
 
 `
@@ -47,7 +47,7 @@ export const ProductTitle = styled.h5`
   font-size: 14px;
   font-weight: 400;
   text-align: left;
-  color: rgb(153, 153, 153);
+  color: var(--gray-primary);
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
@@ -65,7 +65,7 @@ export const Footercard = styled.div`
 
   p {
       font-weight: bold;
-      color: rgb(51, 51, 51);
+      color: var(--black-light);
     }
   
   div {
@@ -78,8 +78,8 @@ export const Footercard = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 197, 0);
-    border: 1px solid rgb(255, 197, 0);
+    background-color: var(--yellow-dark);
+    border: 1px solid var(--yellow-dark);
     border-radius: 8px;
     padding-bottom: 2px;
     cursor: pointer;
@@ -89,9 +89,9 @@ export const Footercard = styled.div`
     }
 
     :disabled {
-      background-color: rgb(230, 230, 230);
-      border: 1px solid rgb(230, 230, 230);
-      color: rgb(153, 153, 153);
+      background-color: var(--gray-disabled);
+      border: 1px solid var(--gray-disabled);
+      color: var(--gray-primary);
     }
   }
 `

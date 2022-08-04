@@ -10,6 +10,16 @@ import {
 
 const CardProduct = (props) => {
   const [amount, setAmount] = useState(0)
+
+  const add = (addCart) => {
+    addCart()
+    setAmount(amount + 1)
+  }
+
+  const remove = (removeCart) => {
+    removeCart()
+    setAmount(amount - 1)
+  } 
   return (
     <>
       <WrapperCard>
@@ -23,9 +33,9 @@ const CardProduct = (props) => {
               <p>{props.price}</p>
               <div>
                 <button disabled={amount <= 0 ? true : false}
-                  onClick={() => setAmount(amount - 1)}
+                  onClick={() => remove(props.removeCart)}
                   type='button'>-</button>
-                <button type='button' onClick={() => setAmount(amount + 1)}>+</button>
+                <button type='button' onClick={() => add(props.addCart)}>+</button>
               </div>
             </Footercard>
           </WrapperProductDetails>
