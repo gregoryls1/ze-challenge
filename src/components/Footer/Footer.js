@@ -9,11 +9,11 @@ const Footer = () => {
     <WarpperFooter>
       <WarpperItens>
         <ItensFooter>
-          <ImageFooter src={LogoZe} />
+          <ImageFooter src={LogoZe} alt='Logo Zé Delivery'/>
         </ItensFooter>
         <ItensFooter>
           <div>
-            <h4>Sobre o Zé Dedivvery</h4>
+            <h4>Sobre o Zé Delivery</h4>
             <a href='#'>Me ajuda, Zé!</a>
             <a href='#'>Trabalhe conosco</a>
             <a href='#'>Pagamento na Entrega</a>
@@ -30,10 +30,10 @@ const Footer = () => {
           <div>
             <h4>Já baixou o aplicativo?</h4>
             <a href='#'>
-              <BadgeFooter src={PlayStoreBadge} />
+              <BadgeFooter src={PlayStoreBadge} alt='link para ir ao Google PlayStore'/>
             </a>
             <a href='#'>
-              <BadgeFooter src={AppleStoreBadge} />
+              <BadgeFooter src={AppleStoreBadge} alt='link para ir a Apple Store'/>
             </a>
           </div>
         </ItensFooter>
