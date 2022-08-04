@@ -19,8 +19,8 @@ const Header = (props) => {
   return (
     <WarpperHeader >
       <ItensHeader>
-        <ImageHeader src={LogoZe} />
-        {getAddress(props.address) ?
+        <ImageHeader src={LogoZe} alt="Logo Zé Delivery" />
+        {props.address ?
           <Address>
             <span>Receber em:</span>
             <p>{getAddress(props.address)}</p>
@@ -29,7 +29,7 @@ const Header = (props) => {
       </ItensHeader>
       {props.shoppingCart != null ?
         <WrapperShoppingCart>
-          <ImageBag src={IconBag} />
+          <ImageBag src={IconBag} alt="Carrinho de Compra" />
           <span>{props.shoppingCart}</span>
         </WrapperShoppingCart> : ''
       }
